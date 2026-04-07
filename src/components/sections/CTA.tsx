@@ -2,7 +2,7 @@
 
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { ArrowRight, WhatsappLogo } from '@phosphor-icons/react';
+import { ArrowRight } from '@phosphor-icons/react';
 import { theme, EASE_OUT } from '@/lib/theme';
 import { Container } from '@/components/ui/Container';
 import { WHATSAPP_URL } from '@/lib/constants';
@@ -31,8 +31,8 @@ const CTAInner = styled.div`
 const CTACard = styled(motion.div)`
   position: relative;
   background: ${theme.gradients.gold};
-  border-radius: 24px;
-  padding: 80px 64px;
+  border-radius: 20px;
+  padding: 56px 48px;
   overflow: hidden;
   text-align: center;
 
@@ -64,28 +64,18 @@ const CTACard = styled(motion.div)`
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
-    padding: 56px 28px;
+    padding: 44px 24px;
   }
 `;
 
 const CTATitle = styled.h2`
   font-family: ${theme.fonts.heading};
-  font-size: clamp(28px, 3.5vw, 44px);
+  font-size: clamp(24px, 3vw, 36px);
   font-weight: 700;
   color: ${theme.colors.dark};
-  line-height: 1.15;
-  margin-bottom: 20px;
+  line-height: 1.2;
+  margin-bottom: 28px;
   letter-spacing: -0.5px;
-  position: relative;
-`;
-
-const CTAText = styled.p`
-  font-family: ${theme.fonts.body};
-  font-size: clamp(15px, 1.3vw, 18px);
-  line-height: 1.7;
-  color: rgba(11, 11, 11, 0.7);
-  max-width: 560px;
-  margin: 0 auto 40px;
   position: relative;
 `;
 
@@ -93,12 +83,12 @@ const CTAButton = styled.a`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   font-family: ${theme.fonts.heading};
   font-weight: 600;
-  font-size: 16px;
-  padding: 18px 40px;
-  border-radius: 8px;
+  font-size: 15px;
+  padding: 14px 32px;
+  border-radius: 10px;
   cursor: pointer;
   transition: all ${theme.transitions.default};
   text-decoration: none;
@@ -106,7 +96,7 @@ const CTAButton = styled.a`
   white-space: nowrap;
   background: ${theme.colors.dark};
   color: ${theme.colors.white};
-  border: 2px solid transparent;
+  border: none;
   position: relative;
 
   &:hover {
@@ -131,16 +121,11 @@ export function CTA() {
           transition={{ duration: 0.7, ease: EASE_OUT }}
         >
           <CTATitle>
-            Pronto para estruturar o crescimento da sua empresa?
+            Pronto para acelerar seu crescimento?
           </CTATitle>
-          <CTAText>
-            Agende uma conversa com nossos especialistas e descubra como a
-            inteligência financeira pode transformar o futuro do seu negócio.
-          </CTAText>
           <CTAButton href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-            <WhatsappLogo size={20} weight="fill" />
             Fale com um especialista
-            <ArrowRight size={18} weight="bold" />
+            <ArrowRight size={16} weight="bold" />
           </CTAButton>
         </CTACard>
       </CTAInner>

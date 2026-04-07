@@ -50,6 +50,7 @@ const NavLinks = styled.ul<{ open: boolean }>`
   display: flex;
   align-items: center;
   gap: 32px;
+  list-style: none;
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     position: fixed;
@@ -65,9 +66,10 @@ const NavLinks = styled.ul<{ open: boolean }>`
     background: rgba(11, 11, 11, 0.98);
     backdrop-filter: blur(24px);
     border-left: 1px solid rgba(255, 255, 255, 0.06);
-    transform: translateX(${({ open }) => (open ? '0' : '110%')});
+    transform: translateX(${({ open }) => (open ? '0' : '100%')});
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 999;
+    z-index: 1001;
+    overflow-y: auto;
   }
 `;
 
@@ -155,7 +157,8 @@ const MobileToggle = styled.button`
   color: ${theme.colors.white};
   cursor: pointer;
   padding: 8px;
-  z-index: 1001;
+  z-index: 1002;
+  position: relative;
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     display: flex;
@@ -173,23 +176,33 @@ const Overlay = styled.div<{ open: boolean }>`
     opacity: ${({ open }) => (open ? 1 : 0)};
     visibility: ${({ open }) => (open ? 'visible' : 'hidden')};
     transition: all 0.3s ease;
-    z-index: 998;
+    z-index: 1000;
   }
 `;
 
-export function Header() {
+export default function Header() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Close menu on route change
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    setMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
 

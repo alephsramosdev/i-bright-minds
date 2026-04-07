@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import EmotionRegistry from '@/lib/EmotionRegistry';
-import { Header } from '@/components/layout/Header';
+import Header from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsAppFab } from '@/components/ui/WhatsAppFab';
+import { ScrollToTop } from '@/components/ui/ScrollToTop';
 
 export const metadata: Metadata = {
   title: 'BM Bright Minds Accelerator | Consultoria Estratégica Financeira',
@@ -34,6 +35,7 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body>
         <EmotionRegistry>
+          <ScrollToTop />
           <Header />
           <main>{children}</main>
           <Footer />
