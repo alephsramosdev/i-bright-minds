@@ -108,6 +108,13 @@ const CTAButton = styled.a`
   &:active {
     transform: translateY(0);
   }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    width: 100%;
+    max-width: 320px;
+    font-size: 14px;
+    padding: 14px 24px;
+  }
 `;
 
 export function CTA() {
