@@ -1,4 +1,4 @@
-export const WHATSAPP_NUMBER = '5511999999999';
+export const WHATSAPP_NUMBER = '5511978139316';
 export const WHATSAPP_MESSAGE = 'Olá! Gostaria de saber mais sobre os serviços da BM Bright Minds Accelerator.';
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
@@ -12,32 +12,39 @@ export const NAV_LINKS = [
 
 export const SERVICES = [
   {
-    id: 'estruturacao',
-    title: 'Estruturação Financeira',
+    id: 'gestao-pessoas',
+    title: 'Gestão de Pessoas e Estrutura Organizacional',
     description:
-      'Organizamos a base financeira do seu negócio para que cada decisão seja guiada por dados concretos, não por suposições.',
-    icon: 'ChartLineUp' as const,
+      'Organizamos equipes, papéis e rotinas para aumentar produtividade, reduzir riscos e melhorar a performance.',
+    icon: 'UsersThree' as const,
   },
   {
-    id: 'tributario',
-    title: 'Planejamento Tributário',
+    id: 'processos',
+    title: 'Processos e Eficiência Operacional',
     description:
-      'Identificamos oportunidades de eficiência tributária que reduzem custos e protegem seu negócio com total conformidade legal.',
-    icon: 'Scales' as const,
+      'Mapeamento, padronização e otimização dos processos para ganho de escala, redução de erros e aumento de eficiência.',
+    icon: 'GearSix' as const,
   },
   {
-    id: 'governanca',
-    title: 'Governança Corporativa',
+    id: 'marketing-vendas',
+    title: 'Estratégia de Marketing e Vendas',
     description:
-      'Implementamos processos, controles e práticas de transparência que preparam sua empresa para os próximos estágios de crescimento.',
-    icon: 'ShieldCheck' as const,
+      'Estruturação do posicionamento, geração de demanda e organização do processo comercial para crescimento previsível.',
+    icon: 'Megaphone' as const,
   },
   {
-    id: 'consultoria',
-    title: 'Consultoria Estratégica',
+    id: 'metas-kpis',
+    title: 'Definição de Metas e Indicadores (KPIs)',
     description:
-      'Transformamos dados financeiros em direção estratégica clara, permitindo que você tome decisões com segurança e visão de longo prazo.',
-    icon: 'Compass' as const,
+      'Criação de métricas claras para acompanhamento e tomada de decisão.',
+    icon: 'Target' as const,
+  },
+  {
+    id: 'acompanhamento',
+    title: 'Acompanhamento Executivo Mensal',
+    description:
+      'Suporte contínuo para garantir execução, ajustes e evolução do negócio.',
+    icon: 'CalendarCheck' as const,
   },
 ] as const;
 

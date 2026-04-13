@@ -3,10 +3,11 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import {
-  ChartLineUp,
-  Scales,
-  ShieldCheck,
-  Compass,
+  UsersThree,
+  GearSix,
+  Megaphone,
+  Target,
+  CalendarCheck,
   ArrowUpRight,
 } from '@phosphor-icons/react';
 import { theme, EASE_OUT } from '@/lib/theme';
@@ -16,10 +17,11 @@ import { SectionTitle } from '@/components/ui/SectionTitle';
 import { SERVICES } from '@/lib/constants';
 
 const iconMap = {
-  ChartLineUp,
-  Scales,
-  ShieldCheck,
-  Compass,
+  UsersThree,
+  GearSix,
+  Megaphone,
+  Target,
+  CalendarCheck,
 } as const;
 
 const ServicesGrid = styled.div`

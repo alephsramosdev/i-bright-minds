@@ -3,14 +3,14 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import {
-    WhatsappLogo,
-    EnvelopeSimple,
-    Phone,
-    MapPin,
-    LinkedinLogo,
-    InstagramLogo,
-    ArrowRight,
-    Clock,
+  WhatsappLogo,
+  EnvelopeSimple,
+  Phone,
+  MapPin,
+  LinkedinLogo,
+  InstagramLogo,
+  ArrowRight,
+  Clock,
 } from '@phosphor-icons/react';
 import { theme, EASE_OUT } from '@/lib/theme';
 import { Container } from '@/components/ui/Container';
@@ -222,135 +222,135 @@ const SocialIcon = styled.a`
 `;
 
 const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: (i: number) => ({
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.6, delay: i * 0.1, ease: EASE_OUT },
-    }),
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay: i * 0.1, ease: EASE_OUT },
+  }),
 };
 
 export function ContatoContent() {
-    return (
-        <>
-            <PageHero
-                label="Contato"
-                title={<>Vamos conversar sobre o <span>futuro</span> da sua empresa</>}
-                description="Fale diretamente com nossos especialistas pelo WhatsApp e descubra como a inteligência financeira pode transformar seu negócio."
-            />
+  return (
+    <>
+      <PageHero
+        label="Contato"
+        title={<>Vamos conversar sobre o <span>futuro</span> da sua empresa</>}
+        description="Fale diretamente com nossos especialistas pelo WhatsApp e descubra como a inteligência financeira pode transformar seu negócio."
+      />
 
-            <Section bg="dark">
-                <Container>
-                    <ContactLayout>
-                        <WhatsAppBanner
-                            href={WHATSAPP_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, ease: EASE_OUT }}
-                        >
-                            <WhatsAppContent>
-                                <WhatsAppTitle>
-                                    <WhatsappLogo size={32} weight="fill" />
-                                    Fale conosco pelo WhatsApp
-                                </WhatsAppTitle>
-                                <WhatsAppText>
-                                    Atendimento rápido e personalizado. Resposta em menos de 2 horas durante o horário comercial.
-                                </WhatsAppText>
-                            </WhatsAppContent>
-                            <WhatsAppButton>
-                                Iniciar conversa
-                                <ArrowRight size={18} weight="bold" />
-                            </WhatsAppButton>
-                        </WhatsAppBanner>
+      <Section bg="dark">
+        <Container>
+          <ContactLayout>
+            <WhatsAppBanner
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: EASE_OUT }}
+            >
+              <WhatsAppContent>
+                <WhatsAppTitle>
+                  <WhatsappLogo size={32} weight="fill" />
+                  Fale conosco pelo WhatsApp
+                </WhatsAppTitle>
+                <WhatsAppText>
+                  Atendimento rápido e personalizado. Resposta em menos de 2 horas durante o horário comercial.
+                </WhatsAppText>
+              </WhatsAppContent>
+              <WhatsAppButton>
+                Iniciar conversa
+                <ArrowRight size={18} weight="bold" />
+              </WhatsAppButton>
+            </WhatsAppBanner>
 
-                        <InfoGrid>
-                            <InfoCard
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true }}
-                                custom={0}
-                                variants={fadeInUp}
-                            >
-                                <InfoIcon>
-                                    <EnvelopeSimple size={24} weight="duotone" />
-                                </InfoIcon>
-                                <InfoLabel>E-mail</InfoLabel>
-                                <InfoValue>contato@brightminds.com.br</InfoValue>
-                            </InfoCard>
+            <InfoGrid>
+              <InfoCard
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={0}
+                variants={fadeInUp}
+              >
+                <InfoIcon>
+                  <EnvelopeSimple size={24} weight="duotone" />
+                </InfoIcon>
+                <InfoLabel>E-mail</InfoLabel>
+                <InfoValue>contato@brightminds.com.br</InfoValue>
+              </InfoCard>
 
-                            <InfoCard
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true }}
-                                custom={1}
-                                variants={fadeInUp}
-                            >
-                                <InfoIcon>
-                                    <Phone size={24} weight="duotone" />
-                                </InfoIcon>
-                                <InfoLabel>Telefone</InfoLabel>
-                                <InfoValue>+55 (11) 99999-9999</InfoValue>
-                            </InfoCard>
+              <InfoCard
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={1}
+                variants={fadeInUp}
+              >
+                <InfoIcon>
+                  <Phone size={24} weight="duotone" />
+                </InfoIcon>
+                <InfoLabel>Telefone</InfoLabel>
+                <InfoValue>(11) 97813-9316</InfoValue>
+              </InfoCard>
 
-                            <InfoCard
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true }}
-                                custom={2}
-                                variants={fadeInUp}
-                            >
-                                <InfoIcon>
-                                    <MapPin size={24} weight="duotone" />
-                                </InfoIcon>
-                                <InfoLabel>Localização</InfoLabel>
-                                <InfoValue>São Paulo, SP — Brasil</InfoValue>
-                            </InfoCard>
-                        </InfoGrid>
+              <InfoCard
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={2}
+                variants={fadeInUp}
+              >
+                <InfoIcon>
+                  <MapPin size={24} weight="duotone" />
+                </InfoIcon>
+                <InfoLabel>Localização</InfoLabel>
+                <InfoValue>Av. Paulista, 302, Sé<br />São Paulo - SP, 01310-000</InfoValue>
+              </InfoCard>
+            </InfoGrid>
 
-                        <BottomRow>
-                            <BottomText
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true }}
-                                custom={0}
-                                variants={fadeInUp}
-                            >
-                                <Clock size={20} weight="duotone" />
-                                Seg. a Sex. das 9h às 18h — Respondemos em até 2 horas
-                            </BottomText>
-                            <SocialRow
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true }}
-                                custom={1}
-                                variants={fadeInUp}
-                            >
-                                <SocialIcon
-                                    href="https://linkedin.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="LinkedIn"
-                                >
-                                    <LinkedinLogo size={22} weight="fill" />
-                                </SocialIcon>
-                                <SocialIcon
-                                    href="https://instagram.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="Instagram"
-                                >
-                                    <InstagramLogo size={22} weight="fill" />
-                                </SocialIcon>
-                            </SocialRow>
-                        </BottomRow>
-                    </ContactLayout>
-                </Container>
-            </Section>
+            <BottomRow>
+              <BottomText
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={0}
+                variants={fadeInUp}
+              >
+                <Clock size={20} weight="duotone" />
+                Seg. a Sex. das 9h às 18h — Respondemos em até 2 horas
+              </BottomText>
+              <SocialRow
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={1}
+                variants={fadeInUp}
+              >
+                <SocialIcon
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <LinkedinLogo size={22} weight="fill" />
+                </SocialIcon>
+                <SocialIcon
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
+                  <InstagramLogo size={22} weight="fill" />
+                </SocialIcon>
+              </SocialRow>
+            </BottomRow>
+          </ContactLayout>
+        </Container>
+      </Section>
 
-            <FAQ />
-        </>
-    );
+      <FAQ />
+    </>
+  );
 }

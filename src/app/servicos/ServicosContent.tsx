@@ -3,10 +3,11 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import {
-    ChartLineUp,
-    Scales,
-    ShieldCheck,
-    Compass,
+    UsersThree,
+    GearSix,
+    Megaphone,
+    Target,
+    CalendarCheck,
     ArrowUpRight,
     CheckCircle,
 } from '@phosphor-icons/react';
@@ -20,10 +21,11 @@ import { CTA } from '@/components/sections/CTA';
 import { SERVICES } from '@/lib/constants';
 
 const iconMap: Record<string, React.ElementType> = {
-    ChartLineUp,
-    Scales,
-    ShieldCheck,
-    Compass,
+    UsersThree,
+    GearSix,
+    Megaphone,
+    Target,
+    CalendarCheck,
 };
 
 const ServicesGrid = styled.div`
@@ -145,6 +147,113 @@ const StatLabel = styled.div`
   color: ${theme.colors.gray400};
 `;
 
+const IntroText = styled(motion.p)`
+  font-family: ${theme.fonts.body};
+  font-size: 18px;
+  line-height: 1.85;
+  color: ${theme.colors.gray300};
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 64px;
+`;
+
+const ResultsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+`;
+
+const ResultCard = styled(motion.div)`
+  background: rgba(21, 26, 58, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 40px 32px;
+  transition: all ${theme.transitions.slow};
+
+  &:hover {
+    background: rgba(21, 26, 58, 0.4);
+    border-color: rgba(200, 168, 78, 0.15);
+    transform: translateY(-4px);
+  }
+`;
+
+const ResultTitle = styled.h3`
+  font-family: ${theme.fonts.heading};
+  font-size: 20px;
+  font-weight: 700;
+  color: ${theme.colors.white};
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  svg {
+    color: ${theme.colors.gold};
+    flex-shrink: 0;
+  }
+`;
+
+const ResultList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+`;
+
+const ResultItem = styled.li`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: ${theme.fonts.body};
+  font-size: 15px;
+  color: ${theme.colors.gray300};
+  line-height: 1.5;
+
+  svg {
+    flex-shrink: 0;
+    color: ${theme.colors.gold};
+  }
+`;
+
+const SectionHeader = styled.div`
+  text-align: center;
+  margin-bottom: 56px;
+`;
+
+const SectionLabel = styled(motion.span)`
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: ${theme.fonts.heading};
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: ${theme.colors.gold};
+  margin-bottom: 16px;
+
+  &::before,
+  &::after {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: ${theme.gradients.gold};
+  }
+`;
+
+const SectionHeading = styled(motion.h2)`
+  font-family: ${theme.fonts.heading};
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 700;
+  color: ${theme.colors.white};
+  letter-spacing: -0.5px;
+  margin-top: 16px;
+`;
+
 const cardVariants = {
     hidden: { opacity: 0, y: 40 },
     visible: (i: number) => ({
@@ -155,37 +264,44 @@ const cardVariants = {
 };
 
 const serviceBenefits: Record<string, string[]> = {
-    estruturacao: [
-        'Organização de fluxo de caixa e demonstrações financeiras',
-        'Construção de projeções financeiras realistas',
-        'Dashboards de indicadores financeiros chave',
-        'Base sólida para captação de investimentos',
+    'gestao-pessoas': [
+        'Redução de riscos trabalhistas',
+        'Aumento da produtividade da equipe',
+        'Clareza de papéis e responsabilidades',
+        'Melhoria no desempenho e engajamento',
     ],
-    tributario: [
-        'Análise completa do regime tributário vigente',
-        'Identificação de créditos e oportunidades fiscais',
-        'Planejamento de carga tributária otimizada',
-        'Total conformidade com a legislação vigente',
+    processos: [
+        'Redução de erros e retrabalho',
+        'Ganho de produtividade operacional',
+        'Processos padronizados e escaláveis',
+        'Maior controle e organização interna',
     ],
-    governanca: [
-        'Implementação de processos e controles internos',
-        'Estruturação de conselhos e comitês',
-        'Práticas de transparência e compliance',
-        'Preparação para auditorias e investidores',
+    'marketing-vendas': [
+        'Aumento na geração de leads qualificados',
+        'Crescimento no faturamento',
+        'Estrutura comercial mais organizada',
+        'Maior previsibilidade de vendas',
     ],
-    consultoria: [
-        'Diagnóstico financeiro profundo e personalizado',
-        'Definição de metas e KPIs estratégicos',
-        'Acompanhamento executivo mensal',
-        'Orientação para tomada de decisão em momentos críticos',
+    'metas-kpis': [
+        'Métricas claras e objetivas',
+        'Acompanhamento de performance em tempo real',
+        'Tomada de decisão baseada em dados',
+        'Alinhamento de metas entre áreas',
+    ],
+    acompanhamento: [
+        'Suporte executivo contínuo',
+        'Ajustes estratégicos mensais',
+        'Garantia de execução do plano',
+        'Evolução constante do negócio',
     ],
 };
 
 const serviceStats: Record<string, { value: string; label: string }> = {
-    estruturacao: { value: '150+', label: 'Empresas Estruturadas' },
-    tributario: { value: 'R$40M+', label: 'Em Economia Tributária' },
-    governanca: { value: '98%', label: 'Satisfação dos Clientes' },
-    consultoria: { value: '12+', label: 'Anos de Experiência' },
+    'gestao-pessoas': { value: '150+', label: 'Empresas Atendidas' },
+    processos: { value: '98%', label: 'Satisfação dos Clientes' },
+    'marketing-vendas': { value: '12+', label: 'Anos de Experiência' },
+    'metas-kpis': { value: '500+', label: 'KPIs Implementados' },
+    acompanhamento: { value: '100%', label: 'Foco em Resultados' },
 };
 
 export function ServicosContent() {
@@ -193,8 +309,8 @@ export function ServicosContent() {
         <>
             <PageHero
                 label="Nossos Serviços"
-                title={<>Soluções que <span>transformam</span> a gestão financeira</>}
-                description="Cada serviço é desenhado a partir de um diagnóstico profundo, com foco em resultados mensuráveis e sustentáveis para o seu negócio."
+                title={<>Soluções que <span>transformam</span> a gestão da sua empresa</>}
+                description="Atuamos na transformação e evolução de empresas, integrando gestão, operação e crescimento, com foco em performance, escala e geração de valor sustentável."
             />
 
             <Section bg="dark">
@@ -240,6 +356,124 @@ export function ServicosContent() {
                             );
                         })}
                     </ServicesGrid>
+                </Container>
+            </Section>
+
+            <Section bg="navy">
+                <Container>
+                    <SectionHeader>
+                        <SectionLabel
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, ease: EASE_OUT }}
+                        >
+                            Resultados
+                        </SectionLabel>
+                        <SectionHeading
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.1, ease: EASE_OUT }}
+                        >
+                            Resultados por frente de atuação
+                        </SectionHeading>
+                    </SectionHeader>
+
+                    <ResultsGrid>
+                        <ResultCard
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            custom={0}
+                            variants={cardVariants}
+                        >
+                            <ResultTitle>
+                                <UsersThree size={24} weight="duotone" />
+                                Gestão de Pessoas
+                            </ResultTitle>
+                            <ResultList>
+                                <ResultItem>
+                                    <CheckCircle size={18} weight="fill" />
+                                    Redução de riscos trabalhistas
+                                </ResultItem>
+                                <ResultItem>
+                                    <CheckCircle size={18} weight="fill" />
+                                    Aumento da produtividade da equipe
+                                </ResultItem>
+                                <ResultItem>
+                                    <CheckCircle size={18} weight="fill" />
+                                    Clareza de papéis e responsabilidades
+                                </ResultItem>
+                                <ResultItem>
+                                    <CheckCircle size={18} weight="fill" />
+                                    Melhoria no desempenho e engajamento
+                                </ResultItem>
+                            </ResultList>
+                        </ResultCard>
+
+                        <ResultCard
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            custom={1}
+                            variants={cardVariants}
+                        >
+                            <ResultTitle>
+                                <GearSix size={24} weight="duotone" />
+                                Processos e Eficiência Operacional
+                            </ResultTitle>
+                            <ResultList>
+                                <ResultItem>
+                                    <CheckCircle size={18} weight="fill" />
+                                    Redução de erros e retrabalho
+                                </ResultItem>
+                                <ResultItem>
+                                    <CheckCircle size={18} weight="fill" />
+                                    Ganho de produtividade operacional
+                                </ResultItem>
+                                <ResultItem>
+                                    <CheckCircle size={18} weight="fill" />
+                                    Processos padronizados e escaláveis
+                                </ResultItem>
+                                <ResultItem>
+                                    <CheckCircle size={18} weight="fill" />
+                                    Maior controle e organização interna
+                                </ResultItem>
+                            </ResultList>
+                        </ResultCard>
+
+                        <ResultCard
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            custom={2}
+                            variants={cardVariants}
+                        >
+                            <ResultTitle>
+                                <Megaphone size={24} weight="duotone" />
+                                Marketing e Vendas
+                            </ResultTitle>
+                            <ResultList>
+                                <ResultItem>
+                                    <CheckCircle size={18} weight="fill" />
+                                    Aumento na geração de leads qualificados
+                                </ResultItem>
+                                <ResultItem>
+                                    <CheckCircle size={18} weight="fill" />
+                                    Crescimento no faturamento
+                                </ResultItem>
+                                <ResultItem>
+                                    <CheckCircle size={18} weight="fill" />
+                                    Estrutura comercial mais organizada
+                                </ResultItem>
+                                <ResultItem>
+                                    <CheckCircle size={18} weight="fill" />
+                                    Maior previsibilidade de vendas
+                                </ResultItem>
+                            </ResultList>
+                        </ResultCard>
+                    </ResultsGrid>
                 </Container>
             </Section>
 

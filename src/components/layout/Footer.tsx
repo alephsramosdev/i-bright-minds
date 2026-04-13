@@ -196,10 +196,11 @@ export function Footer() {
 
           <FooterCol>
             <FooterTitle>Serviços</FooterTitle>
-            <FooterLink href="/servicos">Estruturação Financeira</FooterLink>
-            <FooterLink href="/servicos">Planejamento Tributário</FooterLink>
-            <FooterLink href="/servicos">Governança Corporativa</FooterLink>
-            <FooterLink href="/servicos">Consultoria Estratégica</FooterLink>
+            <FooterLink href="/servicos">Gestão de Pessoas</FooterLink>
+            <FooterLink href="/servicos">Processos e Eficiência</FooterLink>
+            <FooterLink href="/servicos">Marketing e Vendas</FooterLink>
+            <FooterLink href="/servicos">Metas e KPIs</FooterLink>
+            <FooterLink href="/servicos">Acompanhamento Executivo</FooterLink>
           </FooterCol>
 
           <FooterCol>
@@ -208,13 +209,17 @@ export function Footer() {
               <EnvelopeSimple size={18} weight="duotone" />
               contato@brightminds.com.br
             </ContactItem>
-            <ContactItem href="tel:+5511999999999">
+            <ContactItem href="tel:+5511978139316">
               <Phone size={18} weight="duotone" />
-              +55 (11) 99999-9999
+              (11) 97813-9316
             </ContactItem>
             <ContactItem href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
               <WhatsappLogo size={18} weight="fill" />
               Fale pelo WhatsApp
+            </ContactItem>
+            <ContactItem as="div">
+              <MapPin size={18} weight="duotone" />
+              Av. Paulista, 302, Sé, São Paulo - SP, 01310-000
             </ContactItem>
           </FooterCol>
         </FooterGrid>
